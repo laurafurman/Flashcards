@@ -38,29 +38,29 @@ function CardStudy({deck}) {
       <div>
         <h3>Not enough cards.</h3>
         <p>You need at least 3 cards to study. There are {cardList.length} cards in this deck.</p>
-        <button className="btn btn-primary" onClick={() => history.push(`/decks/${deckId}/cards/new`)}>Add Card</button>
+        <button className="btn btn-sm btn-primary bi bi-plus-lg" onClick={() => history.push(`/decks/${deckId}/cards/new`)}> Add Card</button>
       </div>
     )
   }
 
   if (cardCount <= cardList.length - 2) {
     return (
-      <div className="card">
+      <div className="card mt-4 shadow-sm">
         <div className="card-body">
-          <h3>Card {cardCount + 1} of {cardList.length}</h3>
-          {side ? <p>{currentCard.front}</p> : <p>{currentCard.back}</p>}
-          <button type="button" className="btn btn-secondary" onClick={handleFlip}>Flip</button>
-          {!side ? <button type="button" className="btn btn-primary" onClick={handleNext}>Next</button> : <></>}
+          <h3 className="fs-6 pb-2">Card {cardCount + 1} of {cardList.length}</h3>
+          {side ? <p className="fs-5">{currentCard.front}</p> : <p className="fs-5">{currentCard.back}</p>}
+            <button type="button" className="btn btn-secondary me-2" onClick={handleFlip}>Flip</button>
+            {!side ? <button type="button" className="btn btn-primary" onClick={handleNext}>Next</button> : <></>}
         </div>
       </div>
     )
   } else if (cardCount === cardList.length - 1) {
     return (
-      <div className="card">
+      <div className="card mt-4 shadow-sm">
         <div className="card-body">
-          <h3>Card {cardCount + 1} of {cardList.length}</h3>
-          {side ? <p>{currentCard.front}</p> : <p>{currentCard.back}</p>}
-          <button type="button" className="btn btn-secondary" onClick={handleFlip}>Flip</button>
+          <h3 className="fs-6 pb-2">Card {cardCount + 1} of {cardList.length}</h3>
+          {side ? <p className="fs-5">{currentCard.front}</p> : <p className="fs-5">{currentCard.back}</p>}
+          <button type="button" className="btn btn-secondary me-2" onClick={handleFlip}>Flip</button>
           {!side ? <button type="button" className="btn btn-primary" onClick={handleLast}>Restart</button>:<></>}
         </div>
       </div>

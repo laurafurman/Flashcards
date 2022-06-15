@@ -2,10 +2,10 @@ import React from "react";
 
 function Header() {
   return (
-    <header className="jumbotron bg-dark">
-      <div className="container text-white">
-        <h1 className="display-4">Flashcard-o-matic</h1>
-        <p className="lead">Discover The Flashcard Difference.</p>
+    <header className="bg-dark">
+      <div className="container text-white py-5">
+        <h1 className="display-4 fw-semibold">Flashcard-o-matic</h1>
+        <p className="fs-6 fw-normal">Discover The Flashcard Difference.</p>
       </div>
     </header>
   );

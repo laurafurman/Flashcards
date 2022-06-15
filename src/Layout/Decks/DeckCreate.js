@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useHistory} from "react-router-dom";
+import {useHistory, Link} from "react-router-dom";
 import {createDeck} from "./../../utils/api";
 
 function DeckCreate() {
@@ -29,7 +29,18 @@ function DeckCreate() {
 
   return (
     <div>
-      <h1>Create Deck</h1>
+    <nav className="navbar navbar-light bg-light " >
+      <div className="container-fluid ">
+        <nav aria-label="breadcrumb">
+          <ol className="breadcrumb pt-2">
+            <li className="breadcrumb-item"><Link className="bi bi-house-door-fill text-decoration-none" to={"/"}> Home</Link></li>
+            <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
+          </ol>
+        </nav>
+      </div>
+    </nav>
+
+      <h1 className="mt-3">Create Deck</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">Name</label>
@@ -48,12 +59,13 @@ function DeckCreate() {
             <textarea
               id="description"
               placeholder="Brief description of the deck"
+              rows={4}
               onChange={handleDescriptionChange}
               value={deckData.description}
               className="form-control"
             />
           </div>
-          <button type="submit" className="btn btn-secondary" onClick={() => history.push("/")}>Cancel</button>
+          <button type="submit" className="btn btn-secondary me-2" onClick={() => history.push("/")}>Cancel</button>
           <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>

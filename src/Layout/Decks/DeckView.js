@@ -31,21 +31,31 @@ function DeckView () {
 
   return (
     <div>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to={"/"}>Home</Link></li>
-          <li className="breadcrumb-item active" aria-current="page">{deck.name}</li>
-        </ol>
+      <nav className="navbar navbar-light bg-light rounded" >
+        <div className="container-fluid">
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb pt-2">
+              <li className="breadcrumb-item"><Link className="bi bi-house-door-fill text-decoration-none"to={"/"}> Home</Link></li>
+              <li className="breadcrumb-item active">{deck.name}</li>
+            </ol>
+          </nav>
+        </div>
       </nav>
 
-      <div className="card">
-        <div className="card-body">
+      <div className=" mt-4">
+        <div>
           <h5>{deck.name}</h5>
           <p>{deck.description}</p>
-          <Link to={`/decks/${deckId}/edit`} type="button" className="btn btn-secondary">Edit</Link>
-          <Link to={`/decks/${deckId}/study`} type="button" className="btn btn-primary">Study</Link>
-          <Link to={`/decks/${deckId}/cards/new`} type="button" className="btn btn-primary">Add Cards</Link>
-          <button type="button" className="btn btn-danger bi bi-trash" value={deckId} onClick={confirmDelete}></button>
+        </div>
+        <div className="d-flex justify-content-between">
+          <div className="btn-toolbar">
+            <Link to={`/decks/${deckId}/edit`} type="button" className="btn btn-secondary me-2 bi bi-pencil-fill"> Edit</Link>
+            <Link to={`/decks/${deckId}/study`} type="button" className="btn btn-primary me-2 bi bi-file-text-fill"> Study</Link>
+            <Link to={`/decks/${deckId}/cards/new`} type="button" className="btn btn-primary bi bi-plus-lg"> Add Cards</Link>
+          </div>
+          <div>
+            <button type="button" className="btn btn-danger bi bi-trash3" value={deckId} onClick={confirmDelete}></button>
+          </div>
         </div>
       </div>
     </div>

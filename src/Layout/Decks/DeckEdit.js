@@ -34,15 +34,19 @@ function DeckEdit() {
 
   return (
     <div>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-          <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deckData.name}</Link></li>
-          <li className="breadcrumb-item active" aria-current="page">Edit Deck</li>
-        </ol>
+      <nav className="navbar navbar-light" >
+        <div className="container-fluid bg-light rounded">
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb pt-3">
+              <li className="breadcrumb-item"><Link className="bi bi-house-door-fill text-decoration-none"to={"/"}> Home</Link></li>
+              <li className="breadcrumb-item"><Link className="text-decoration-none" to={`/decks/${deckId}`}>{deckData.name}</Link></li>
+              <li className="breadcrumb-item active" aria-current="page">Edit Deck</li>
+            </ol>
+          </nav>
+        </div>
       </nav>
 
-      <h1>Edit Deck</h1>
+      <h1 className="pt-4">Edit Deck</h1>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -52,7 +56,7 @@ function DeckEdit() {
             id="name"
             onChange={handleNameChange}
             value={deckData.name}
-            className="form-control"
+            className="form-control text-muted"
             aria-describedby="name"
           />
         </div>
@@ -60,12 +64,13 @@ function DeckEdit() {
           <label htmlFor="description" className="form-label">Description</label>
           <textarea 
             id="description"
+            rows={4}
             onChange={handleDescriptionChange}
             value={deckData.description}
-            className="form-control"
+            className="form-control text-muted"
           />
         </div>
-        <button type="submit" className="btn btn-secondary" onClick={() => history.push(`/decks/${deckId}`)}>Cancel</button>
+        <button type="submit" className="btn btn-secondary me-2" onClick={() => history.push(`/decks/${deckId}`)}>Cancel</button>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>

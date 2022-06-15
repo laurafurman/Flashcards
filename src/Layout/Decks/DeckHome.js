@@ -43,7 +43,7 @@ function DeckHome () {
 
         <Route exact path={"/decks/:deckId"}>
           <DeckView />
-          <h2>Cards</h2>
+          <h2 className="pt-4">Cards</h2>
           <CardList card={card} setCard={setCard} />
         </Route>
 
@@ -52,7 +52,7 @@ function DeckHome () {
         </Route>
             
         <Route exact path={"/decks/:deckId/cards/:cardId/edit"}>
-          <CardEdit card={card} setCard={setCard} />
+          <CardEdit />
         </Route> 
 
         <Route>

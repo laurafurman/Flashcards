@@ -7,7 +7,7 @@ function Layout() {
   return (
     <div>
       <Header />
-      <div className="container">
+      <div className="container pt-4">
         <Switch>
           <Route path="/">
             <DeckHome />

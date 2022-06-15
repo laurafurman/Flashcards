@@ -42,22 +42,26 @@ function CardAdd() {
 
   return (
     <div>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-          <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
-          <li className="breadcrumb-item active" aria-current="page">Add Card</li>
-        </ol>
+      <nav className="navbar navbar-light" >
+        <div className="container-fluid bg-light rounded">
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb pt-3">
+              <li className="breadcrumb-item"><Link className="bi bi-house-door-fill text-decoration-none"to={"/"}> Home</Link></li>
+              <li className="breadcrumb-item"><Link className="text-decoration-none" to={`/decks/${deckId}`}>{deck.name}</Link></li>
+              <li className="breadcrumb-item active" aria-current="page">Add Card</li>
+            </ol>
+          </nav>
+        </div>
       </nav>
 
-      <h1>{deck.name}: Create Card</h1>
+      <h2 className="pt-4">{deck.name}: Add Card</h2>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="front" className="form-label">Front</label>
           <textarea
             id="front"
-            // rows="3"
+            rows="2"
             placeholder="Front side of card"
             onChange={handleFront}
             value={cardData.front}
@@ -68,15 +72,15 @@ function CardAdd() {
           <label htmlFor="back" className="form-label">Back</label>
           <textarea
               id="back"
-              rows="3"
+              rows="2"
               placeholder="Back side of card"
               onChange={handleBack}
               value={cardData.back}
               className="form-control"
           />
         </div>
-        <button type="submit" className="btn btn-seconday" onClick={() => history.push("/")}>Cancel</button>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-secondary me-2" onClick={() => history.push("/")}>Done</button>
+        <button type="submit" className="btn btn-primary">Save</button>
       </form>
     </div>
   );
