@@ -15,7 +15,7 @@ function DeckList({decks}) {
   const list = decks.map((deck, index) => {
     const length = deck.cards.length;
     return (
-      <li key={index} className="card mb-2 shadow-sm">
+      <li key={index} className="card text-bg-light mb-2 shadow-sm">
         <div key={index} className="card-body">
           <h5>{deck.name}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{length} cards</h6>
@@ -36,7 +36,7 @@ function DeckList({decks}) {
 
   return (
     <div>
-      <a className="btn btn-secondary bi bi-plus-lg mb-2" href="/decks/new" type="button"> Create Deck</a>
+      <a className="btn btn-secondary bi bi-plus-lg mt-4 mb-2" href="/decks/new" type="button"> Create Deck</a>
       <ul className="list-group">
         {list}
       </ul>

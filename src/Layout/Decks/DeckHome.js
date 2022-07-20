@@ -1,5 +1,5 @@
 import React, {useState , useEffect} from "react";
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch } from "react-router-dom";
 import DeckCreate from "./DeckCreate";
 import DeckList from "./DeckList";
 import DeckStudy from "./DeckStudy";
@@ -47,11 +47,11 @@ function DeckHome () {
           <CardList card={card} setCard={setCard} />
         </Route>
 
-        <Route exact path={"/decks/:deckId/cards/new"}>
+        <Route exact path={'/decks/:deckId/cards/new'}>
           <CardAdd />
         </Route>
             
-        <Route exact path={"/decks/:deckId/cards/:cardId/edit"}>
+        <Route exact path={'/decks/:deckId/cards/:cardId/edit'}>
           <CardEdit />
         </Route> 
 

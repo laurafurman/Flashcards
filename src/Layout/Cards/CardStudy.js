@@ -45,7 +45,7 @@ function CardStudy({deck}) {
 
   if (cardCount <= cardList.length - 2) {
     return (
-      <div className="card mt-4 shadow-sm">
+      <div className="card mt-4 text-bg-light shadow-sm">
         <div className="card-body">
           <h3 className="fs-6 pb-2">Card {cardCount + 1} of {cardList.length}</h3>
           {side ? <p className="fs-5">{currentCard.front}</p> : <p className="fs-5">{currentCard.back}</p>}
@@ -56,7 +56,7 @@ function CardStudy({deck}) {
     )
   } else if (cardCount === cardList.length - 1) {
     return (
-      <div className="card mt-4 shadow-sm">
+      <div className="card mt-4 text-bg-light shadow-sm">
         <div className="card-body">
           <h3 className="fs-6 pb-2">Card {cardCount + 1} of {cardList.length}</h3>
           {side ? <p className="fs-5">{currentCard.front}</p> : <p className="fs-5">{currentCard.back}</p>}

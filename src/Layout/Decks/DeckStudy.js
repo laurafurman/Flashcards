@@ -18,10 +18,10 @@ function DeckStudy () {
   if (deck) {
     return (
       <div>
-        <nav className="navbar navbar-light bg-light " >
-          <div className="container-fluid ">
+        <nav className="navbar navbar-light" >
+          <div className="container-fluid bg-light rounded">
             <nav aria-label="breadcrumb">
-              <ol className="breadcrumb pt-2">
+              <ol className="breadcrumb pt-3">
                 <li className="breadcrumb-item"><Link className="bi bi-house-door-fill text-decoration-none"to={"/"}> Home</Link></li>
                 <li className="breadcrumb-item"><Link className="text-decoration-none" to={`/decks/${deckId}`}>{deck.name}</Link></li>
                 <li className="breadcrumb-item active" aria-current="page">Study</li>

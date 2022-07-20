@@ -29,8 +29,8 @@ function DeckCreate() {
 
   return (
     <div>
-    <nav className="navbar navbar-light bg-light " >
-      <div className="container-fluid ">
+    <nav className="navbar navbar-light" >
+      <div className="container-fluid bg-light rounded">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb pt-2">
             <li className="breadcrumb-item"><Link className="bi bi-house-door-fill text-decoration-none" to={"/"}> Home</Link></li>

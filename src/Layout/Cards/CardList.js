@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
-import {useParams, useHistory, useRouteMatch} from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 import {deleteCard, readCard, readDeck} from "./../../utils/api";
 
 function CardList({setCard}) {
-  const {path} = useRouteMatch();
   const {deckId} = useParams();
   const history = useHistory();
 
@@ -21,7 +20,7 @@ function CardList({setCard}) {
     const id = event.target.value
     const clicked = await readCard(id)
     setCard(clicked)
-    history.push(`${path}/cards/${id}/edit`)
+    history.push(`/decks/${deckId}/cards/${id}/edit`)
   }
 
   const confirmDelete = (event) => {

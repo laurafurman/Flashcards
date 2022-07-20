@@ -1,89 +1,30 @@
-import React, {useState, useEffect} from "react";
-import {Link, useParams, useHistory} from "react-router-dom";
-import {createCard, readDeck} from "./../../utils/api";
+import React, {useState} from "react";
+import { useParams } from "react-router-dom";
+import {createCard} from "./../../utils/api";
+import CardForm from "./CardForm"
 
 function CardAdd() {
+  const { deckId } = useParams();
 
   const initialFormState = {
-    front: "",
-    back: "",
-  };
-
-  const {deckId} = useParams();
-  const history = useHistory();
-
-  const [deck, setDeck] = useState({});
-  const [cardData, setCardData] = useState({...initialFormState});
-
-  useEffect(() => {
-    const abortController = new AbortController();
-    async function loadDeck() {
-      const deckInfo = await readDeck(deckId, abortController.signal)
-      setDeck(deckInfo)
-    }
-    loadDeck()
-    return () => abortController.abort()
-  }, [deckId])
-
-  const handleFront = (event) => {
-    setCardData({...cardData, front: event.target.value})
+    front: "Front side of card",
+    back: "Back side of card",
+    deckId: Number(deckId)
   }
 
-  const handleBack = (event) => {
-    setCardData({...cardData, back: event.target.value})
-  };
+  const [content, setContent] = useState({ ...initialFormState });
 
-  async function handleSubmit(event) {
+  async function handleSave(event) {
     event.preventDefault();
-    await createCard(deckId, cardData);
-    setCardData({...initialFormState})    
-    history.push(`/decks/${deckId}`)
+    await createCard(content);
+    setContent(initialFormState);
   }
 
   return (
     <div>
-      <nav className="navbar navbar-light" >
-        <div className="container-fluid bg-light rounded">
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb pt-3">
-              <li className="breadcrumb-item"><Link className="bi bi-house-door-fill text-decoration-none"to={"/"}> Home</Link></li>
-              <li className="breadcrumb-item"><Link className="text-decoration-none" to={`/decks/${deckId}`}>{deck.name}</Link></li>
-              <li className="breadcrumb-item active" aria-current="page">Add Card</li>
-            </ol>
-          </nav>
-        </div>
-      </nav>
-
-      <h2 className="pt-4">{deck.name}: Add Card</h2>
-
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="front" className="form-label">Front</label>
-          <textarea
-            id="front"
-            rows="2"
-            placeholder="Front side of card"
-            onChange={handleFront}
-            value={cardData.front}
-            className="form-control"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="back" className="form-label">Back</label>
-          <textarea
-              id="back"
-              rows="2"
-              placeholder="Back side of card"
-              onChange={handleBack}
-              value={cardData.back}
-              className="form-control"
-          />
-        </div>
-        <button type="submit" className="btn btn-secondary me-2" onClick={() => history.push("/")}>Done</button>
-        <button type="submit" className="btn btn-primary">Save</button>
-      </form>
+      <CardForm formData={content} setFormData={setContent} handleSave={handleSave} />
     </div>
-  );
+  )
 }
 
 export default CardAdd;

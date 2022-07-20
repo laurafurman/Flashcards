@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "name": "joshua",
-      "description": "iusagdfaksd",
+      "name": "Short Deck",
+      "description": "Not enough to playyyy",
       "id": 3
     }
   ],
@@ -20,7 +20,7 @@
     {
       "id": 1,
       "front": "Differentiate between Real DOM and Virtual DOM.",
-      "back": "Virtual DOM updates are faster but do not directly update the HTML",
+      "back": "Virtual DOM updates are faster but do not directly update the HTML.",
       "deckId": 1
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
-      "back": "All paths. A route with no path matches all URL's",
+      "back": "All paths. A route with no path matches all URL's.",
       "deckId": 2,
       "id": 4
     },
@@ -53,6 +53,12 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "Card One",
+      "back": "Just one",
+      "deckId": 3,
+      "id": 8
     }
   ]
 }
