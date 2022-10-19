@@ -2,7 +2,7 @@
   "decks": [
     {
       "id": 1,
-      "name": "Rendering in React",
+      "name": "Rendering Something Else",
       "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
     },
     {
@@ -14,6 +14,11 @@
       "name": "Short Deck",
       "description": "Not enough to playyyy",
       "id": 3
+    },
+    {
+      "name": "new new",
+      "description": "",
+      "id": 4
     }
   ],
   "cards": [

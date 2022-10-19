@@ -14,10 +14,10 @@ function CardForm({ formData, setFormData, handleSave }) {
     .then(setDeck);
   }, [deckId]);
 
-  const handleChange = ({ target }) => {
+  const handleChange = (event) => {
     setFormData({
       ...formData,
-      [target.name]: target.value
+      [event.target.name]: event.target.value
     });
   };
 

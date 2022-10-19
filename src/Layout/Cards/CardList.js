@@ -39,7 +39,7 @@ function CardList({setCard}) {
             <p className="col">{card.back}</p>
           </div>
           
-          <div className >
+          <div>
             <button type="button" className="btn btn-secondary me-2 bi bi-pencil-fill" key={index} value={card.id} onClick={handleClick}> Edit</button>
             <button type="button" className="btn btn-danger bi bi-trash3" value={card.id} onClick={confirmDelete}></button>
           </div>
