@@ -31,8 +31,6 @@ function CardAdd() {
     return () => abortController.abort();
   }, [deckId]);
 
-  //we have the deck stored in deck variable
-
   const initialState = {
     front: "",
     back: "",
